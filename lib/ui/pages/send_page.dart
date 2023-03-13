@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_app/ui/shared/layout.dart';
 import 'package:personal_app/ui/shared/theme.dart';
 import 'package:personal_app/ui/widgets/transfer_button.dart';
 
@@ -7,8 +8,10 @@ class SendPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return LayoutPage(
+      isLogin: true,
+      isSelected: 2,
+      layoutBody: Stack(
         alignment: Alignment.topCenter,
         children: [
           Container(

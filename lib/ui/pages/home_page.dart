@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_app/ui/shared/layout.dart';
 import 'package:personal_app/ui/widgets/deals_banner.dart';
 import 'package:personal_app/ui/widgets/outline_button_deals.dart';
 import 'package:personal_app/ui/widgets/product_service_banner.dart';
@@ -434,82 +435,9 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
-    Widget bottomNavigation() {
-      return BottomAppBar(
-        height: 70.0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: Column(
-                children: [
-                  IconButton(
-                    selectedIcon: const Icon(Icons.home_filled),
-                    icon: const Icon(Icons.home_outlined),
-                    iconSize: 25,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/home');
-                    },
-                  ),
-                  const Text("HOME"),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.money_outlined),
-                    iconSize: 25,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/send');
-                    },
-                  ),
-                  const Text("SEND"),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: const [
-                  SizedBox(
-                    height: 47,
-                  ),
-                  Text("SCAN"),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.tab),
-                    iconSize: 25,
-                    onPressed: () {},
-                  ),
-                  const Text("CASH"),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.settings),
-                    iconSize: 25,
-                    onPressed: () {},
-                  ),
-                  const Text("SETTING"),
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
-    }
-
-    return Scaffold(
-      body: Center(
+    return LayoutPage(
+      isSelected: 1,
+      layoutBody: Center(
         child: Column(
           children: [
             headerPage(),
@@ -521,26 +449,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: Container(
-        width: 60,
-        height: 60,
-        alignment: Alignment.center,
-        child: FloatingActionButton(
-          onPressed: () {},
-          tooltip: "QRIS",
-          elevation: 4.0,
-          backgroundColor: radicalRed,
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/qris_scan.png"),
-              ),
-            ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: bottomNavigation(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

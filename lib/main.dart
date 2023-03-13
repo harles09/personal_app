@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_app/ui/pages/easy_login_page.dart';
 import 'package:personal_app/ui/pages/home_page.dart';
 import 'package:personal_app/ui/pages/inbank_page.dart';
 import 'package:personal_app/ui/pages/send_page.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomePage(),
         '/send': (context) => const SendPage(),
         '/inbank': (context) => const InbankPage(),
+        '/easypin': (context) => const EasyLoginPage(),
       },
     );
   }

@@ -109,6 +109,12 @@ const lightBlack = Color(0xff333333);
 TextStyle greyTextStyle = GoogleFonts.roboto(
   color: grey,
 );
+TextStyle blackTextStyle = GoogleFonts.roboto(
+  color: black,
+);
+TextStyle whiteTextStyle = GoogleFonts.roboto(
+  color: white,
+);
 TextStyle greyBoldTextStyle = GoogleFonts.roboto(
   color: grey,
   fontWeight: bold,
@@ -135,6 +141,11 @@ TextStyle titlePageStyle = GoogleFonts.roboto(
   color: white,
   fontWeight: bold,
   fontSize: 20.0,
+);
+TextStyle easyTitleStyle = GoogleFonts.roboto(
+  color: white,
+  fontWeight: bold,
+  fontSize: 24.0,
 );
 TextStyle transferTitleStyle = GoogleFonts.roboto(
   color: black,
