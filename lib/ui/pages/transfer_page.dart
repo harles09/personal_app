@@ -7,9 +7,15 @@ import 'package:personal_app/ui/widgets/textfield_input.dart';
 import '../shared/theme.dart';
 
 class TransferPage extends StatefulWidget {
-  const TransferPage({
-    Key? key,
-  }) : super(key: key);
+  final String noRek, fullName, category;
+  final double money;
+  const TransferPage(
+      {Key? key,
+      this.noRek = '0',
+      this.fullName = '0',
+      this.category = '0',
+      this.money = 0.0})
+      : super(key: key);
 
   @override
   State<TransferPage> createState() => _TransferPageState();
@@ -61,9 +67,9 @@ class _TransferPageState extends State<TransferPage> {
                 const SizedBox(
                   width: 10.0,
                 ),
-                const Text(
+                Text(
                   "Set the amount",
-                  style: TextStyle(fontSize: 24),
+                  style: TextStyle(fontSize: 24, fontWeight: bold),
                 ),
               ],
             ),
@@ -136,12 +142,34 @@ class _TransferPageState extends State<TransferPage> {
               padding:
                   const EdgeInsets.only(right: 10.0, left: 10.0, top: 20.0),
               child: GestureDetector(
-                onTap: () {},
-                child: Row(
-                  children: const [
-                    Text("Select source account"),
-                    Spacer(),
-                    Icon(Icons.more_vert),
+                onTap: () {
+                  Navigator.pushNamed(context, "/sourceAccount");
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        widget.noRek != '0'
+                            ? Text(
+                                widget.noRek.toString(),
+                                style: TextStyle(fontWeight: bold),
+                              )
+                            : const Text("Select source account"),
+                        const Spacer(),
+                        const Icon(Icons.more_vert),
+                      ],
+                    ),
+                    widget.fullName != '0'
+                        ? Text(widget.fullName.toString())
+                        : const Text(""),
+                    widget.category != '0'
+                        ? Text(widget.category.toString())
+                        : const Text(""),
+                    widget.money != 0.0
+                        ? Text("Balance: ${widget.money.toString()}")
+                        : const Text(""),
                   ],
                 ),
               ),
@@ -173,7 +201,7 @@ class _TransferPageState extends State<TransferPage> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(top: 150.0, left: 10.0, right: 10.0),
+              padding: EdgeInsets.only(top: 100.0, left: 10.0, right: 10.0),
               child: CustomButton(
                 buttonText: "Next",
                 buttonWidth: 0.95,
