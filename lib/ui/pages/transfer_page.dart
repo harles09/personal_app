@@ -6,16 +6,9 @@ import 'package:personal_app/ui/widgets/textfield_input.dart';
 
 import '../shared/theme.dart';
 
+// ignore: must_be_immutable
 class TransferPage extends StatefulWidget {
-  final String noRek, fullName, category;
-  final double money;
-  const TransferPage(
-      {Key? key,
-      this.noRek = '0',
-      this.fullName = '0',
-      this.category = '0',
-      this.money = 0.0})
-      : super(key: key);
+  const TransferPage({Key? key}) : super(key: key);
 
   @override
   State<TransferPage> createState() => _TransferPageState();
@@ -151,9 +144,9 @@ class _TransferPageState extends State<TransferPage> {
                   children: [
                     Row(
                       children: [
-                        widget.noRek != '0'
+                        widget != '0' //TODO late fixing
                             ? Text(
-                                widget.noRek.toString(),
+                                "0",
                                 style: TextStyle(fontWeight: bold),
                               )
                             : const Text("Select source account"),
@@ -161,15 +154,15 @@ class _TransferPageState extends State<TransferPage> {
                         const Icon(Icons.more_vert),
                       ],
                     ),
-                    widget.fullName != '0'
-                        ? Text(widget.fullName.toString())
-                        : const Text(""),
-                    widget.category != '0'
-                        ? Text(widget.category.toString())
-                        : const Text(""),
-                    widget.money != 0.0
-                        ? Text("Balance: ${widget.money.toString()}")
-                        : const Text(""),
+                    widget != 'Test' //TODO late fixing
+                        ? Text("widget")
+                        : const Text("Testing"),
+                    widget != 'Test' //TODO late fixing
+                        ? Text("wi")
+                        : const Text("Testing"),
+                    widget != 0 //TODO late fixing
+                        ? Text("Balance: ${widget}")
+                        : const Text("Testing"),
                   ],
                 ),
               ),

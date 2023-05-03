@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:money_formatter/money_formatter.dart';
-import 'package:personal_app/main.dart';
 
 import '../shared/theme.dart';
 
 class SourceAccountContainer extends StatelessWidget {
   final String assetImage, noRek, category, fullName;
-  final double money;
+  final int money;
   const SourceAccountContainer(
       {super.key,
       required this.assetImage,
@@ -18,7 +17,7 @@ class SourceAccountContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MoneyFormatter fmf = MoneyFormatter(
-      amount: money,
+      amount: money.toDouble(),
       settings: MoneyFormatterSettings(
           symbol: 'IDR',
           thousandSeparator: '.',
@@ -27,10 +26,7 @@ class SourceAccountContainer extends StatelessWidget {
     );
     MoneyFormatterOutput fo = fmf.output;
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, "/transfer",
-            arguments: SourceAccount(noRek, fullName, "SavingAccount", money));
-      },
+      onTap: () {},
       child: Container(
         width: MediaQuery.of(context).size.width * 0.95,
         height: 100,

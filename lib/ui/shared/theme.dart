@@ -109,11 +109,20 @@ const lightBlack = Color(0xff333333);
 TextStyle greyTextStyle = GoogleFonts.roboto(
   color: grey,
 );
+TextStyle greyTitleSubContent = GoogleFonts.roboto(
+  color: barBG,
+  fontSize: 16.0,
+  fontWeight: bold,
+);
 TextStyle blackTextStyle = GoogleFonts.roboto(
   color: black,
 );
 TextStyle whiteTextStyle = GoogleFonts.roboto(
   color: white,
+);
+TextStyle whiteBoldStyle = GoogleFonts.roboto(
+  color: white,
+  fontWeight: bold,
 );
 TextStyle greyBoldTextStyle = GoogleFonts.roboto(
   color: grey,

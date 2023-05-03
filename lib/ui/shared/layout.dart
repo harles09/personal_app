@@ -115,7 +115,9 @@ class _LayoutState extends State<LayoutPage> {
                           )
                         : const Icon(Icons.settings_outlined),
                     iconSize: 25,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/setting');
+                    },
                   ),
                   const Text("SETTING"),
                 ],

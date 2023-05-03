@@ -24,7 +24,7 @@ class SourceAccountPage extends StatelessWidget {
                     color: radicalRed,
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, "/send");
                   },
                 ),
               ),
